@@ -1,0 +1,42 @@
+.navigation {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #0a1e3b;
+  color: white;
+  padding: 5rem 1rem;
+  transition: left 0.3s ease-in-out;
+  z-index: 10;
+
+  &.open {
+    left: 0;
+  }
+}
+
+.navigation__link {
+  text-decoration: none;
+  color: rgb(21, 175, 68);
+  font-size: 1.2em;
+}
+
+.navigation__toogle {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  padding: 5px;
+  background: rgb(21, 175, 68);
+  border: none;
+  border-radius: 0 10px 10px 0;
+  z-index: 11;
+  cursor: pointer;
+
+  .nav-icon {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+  }
+}
