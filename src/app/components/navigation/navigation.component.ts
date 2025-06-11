@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class NavigationComponent {
   navigationOpen = true;
 
-  toogleNavigation() {
+  toggleNavigation() {
     this.navigationOpen = !this.navigationOpen;
   }
 }

@@ -36,26 +36,39 @@
   }
 }
 
-.navigation__toggle {
+.burger {
+  width: 32px;
+  height: 24px;
   position: fixed;
   top: 1rem;
-  left: 0;
-  padding: 0.4rem;
-  background-color: rgb(21, 175, 68);
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: none;
   border: none;
-  border-radius: 0 10px 10px 0;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
-  z-index: 11;
   cursor: pointer;
-  transition: background 0.3s ease;
+  z-index: 20;
 
-  &:hover {
-    background-color: rgb(21, 145, 68);
+  span {
+    display: block;
+    height: 3px;
+    background: #15af44;
+    border-radius: 2px;
+    transition: all 0.3s ease;
   }
 
-  .nav-icon {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
+  &.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(0px, 6px);
+    width: 60%;
+  }
+
+  &.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.open span:nth-child(3) {
+    transform: rotate(45deg) translate(0px, -6px);
+    width: 60%;
   }
 }
