@@ -1,21 +1,28 @@
-// Color variables
-$bg-white: rgb(255, 255, 255);
-$title-green: rgb(21, 175, 68);
-
 header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: $bg-white;
+  background-color: rgb(255, 255, 255);
   padding: 2%;
   border-radius: 0 0 20px 20px;
 }
 
 .header__title {
   text-decoration: none;
-  color: $title-green;
+  color: rgb(21, 175, 68);
   text-transform: capitalize;
   font-size: 1.3em;
   font-weight: bold;
+}
+
+.header__time {
+  background-color: rgb(10, 30, 59);
+  color: rgb(255, 255, 255);
+  padding: 1% 2%;
+  border-radius: 5px;
+}
+
+.header__time-hour {
+  color: rgb(21, 175, 68);
 }

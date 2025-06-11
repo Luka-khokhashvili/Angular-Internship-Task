@@ -1,4 +1,7 @@
 <header>
   <a href="" class="header__title">Users Dashboard</a>
-  <p class="header__time">{{ currDateTime | date: "mediumDate"}} {{ currDateTime | date: "shortTime" }}</p>
+  <p class="header__time">
+    {{ currDateTime | date : "mediumDate" }}
+    <span class="header__time-hour">{{ currDateTime | date : "shortTime" }}</span>
+  </p>
 </header>
