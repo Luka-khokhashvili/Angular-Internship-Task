@@ -1,16 +1,19 @@
 .navigation {
   position: fixed;
+  top: 0;
+  left: -220px;
+  width: 220px;
+  height: 100%;
+  background-color: rgb(10, 30, 59);
+  color: white;
+  padding: 4rem 1.5rem;
   display: flex;
   flex-direction: column;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background-color: #0a1e3b;
-  color: white;
-  padding: 5rem 1rem;
+  gap: 1rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
   transition: left 0.3s ease-in-out;
   z-index: 10;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
 
   &.open {
     left: 0;
@@ -18,25 +21,41 @@
 }
 
 .navigation__link {
+  display: block;
   text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(21, 175, 68);
-  font-size: 1.2em;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+  }
 }
 
-.navigation__toogle {
+.navigation__toggle {
   position: fixed;
   top: 1rem;
   left: 0;
-  padding: 5px;
-  background: rgb(21, 175, 68);
+  padding: 0.4rem;
+  background-color: rgb(21, 175, 68);
   border: none;
   border-radius: 0 10px 10px 0;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
   z-index: 11;
   cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: rgb(21, 145, 68);
+  }
 
   .nav-icon {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     transition: transform 0.3s ease;
   }
 }

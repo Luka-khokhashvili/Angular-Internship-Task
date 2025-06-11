@@ -1,7 +1,7 @@
 // ====================
 // 🔤 Font
 // ====================
-$font-base: "Segoe UI", system-ui, sans-serif;
+$font-base: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
 
 // ====================
 // 🔧 Reset & Base Styles
@@ -10,6 +10,7 @@ $font-base: "Segoe UI", system-ui, sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: $font-base;
 }
 
 body {
