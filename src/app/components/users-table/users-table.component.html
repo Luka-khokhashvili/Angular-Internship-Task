@@ -1,3 +1,11 @@
+<input
+  type="text"
+  name="search-bar"
+  placeholder="Search by name or email"
+  [(ngModel)]="searchTerm"
+  (input)="filterUsers()"
+  class="search-input"
+/>
 <table class="users-table">
   <thead>
     <tr class="users-table__title-box">
@@ -9,7 +17,7 @@
       <th></th>
     </tr>
   </thead>
-  <tbody *ngFor="let user of users">
+  <tbody *ngFor="let user of filteredUsers">
     <tr class="users-table__data-box">
       <td>{{ user.firstName }}</td>
       <td>{{ user.lastName }}</td>
@@ -20,7 +28,9 @@
         <button [routerLink]="['/posts', user.id]" class="btn btn--posts">
           Posts
         </button>
-        <button [routerLink]="['/todos', user.id]" class="btn btn--todos">Todos</button>
+        <button [routerLink]="['/todos', user.id]" class="btn btn--todos">
+          Todos
+        </button>
       </td>
     </tr>
   </tbody>

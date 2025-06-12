@@ -34,12 +34,13 @@
     }
   }
 
-  &__status--completed {
-    color: rgb(21, 175, 68);
-  }
-
-  &__status--pending {
-    color: rgb(10, 30, 59);
+  &__status {
+    &--completed {
+      color: rgb(21, 175, 68);
+    }
+    &--pending {
+      color: rgb(10, 30, 59);
+    }
   }
 
   &__buttons {
