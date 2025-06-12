@@ -16,7 +16,7 @@ export class TodosService {
     return this.httpClient.get<Todo[]>(`${this.baseUrl}/todos`);
   }
 
-  getTodosByUserId(userId: string): Observable<Todo> {
-    return this.httpClient.get<Todo>(`${this.baseUrl}/todo/${userId}`);
+  getTodosByUserId(userId: number): Observable<Todo[]> {
+    return this.httpClient.get<Todo[]>(`${this.baseUrl}/users/${userId}/todos`);
   }
 }

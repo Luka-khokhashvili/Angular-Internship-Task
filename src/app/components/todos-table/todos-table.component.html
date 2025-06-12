@@ -1,1 +1,27 @@
-<p>todos-table works!</p>
+<table class="todos-table">
+  <thead>
+    <tr class="todos-table__title-box">
+      <th>Todo Title</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      class="todos-table__data-box"
+      *ngFor="let todo of todos"
+      [class.completed]="todo.completed"
+    >
+      <td>{{ todo.title }}</td>
+      <td class="todos-table__status--completed" *ngIf="todo.completed">
+        completed
+      </td>
+      <td class="todos-table__status--pending" *ngIf="!todo.completed">
+        pending
+      </td>
+      <td class="todos-table__buttons">
+        <button class="btn btn--user">User</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
