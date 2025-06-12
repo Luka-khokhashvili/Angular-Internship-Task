@@ -52,23 +52,13 @@
   cursor: pointer;
   transition: all 0.3s ease;
 
-  &--user {
+  &--details {
     background-color: rgb(21, 175, 68);
     color: rgb(255, 255, 255);
   }
 
-  &--details {
-    border: 2px solid rgb(10, 30, 59);
-    color: rgb(10, 30, 59);
-  }
-
   &:hover {
     opacity: 0.85;
-  }
-
-  &--details:hover {
-    background-color: rgb(10, 30, 59);
-    color: rgb(255, 255, 255);
   }
 }
 

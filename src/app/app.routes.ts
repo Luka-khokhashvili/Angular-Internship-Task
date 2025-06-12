@@ -5,6 +5,7 @@ import { TodosTableComponent } from './components/todos-table/todos-table.compon
 
 export const routes: Routes = [
   { path: 'users', component: UsersTableComponent },
+  { path: 'users/:id', component: UsersTableComponent },
   { path: 'posts', component: PostsTableComponent },
   { path: 'posts/:userId', component: PostsTableComponent },
   { path: 'todos/:userId', component: TodosTableComponent },
