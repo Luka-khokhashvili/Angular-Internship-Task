@@ -1,21 +1,21 @@
 <table class="users-table">
   <thead>
     <tr class="users-table__title-box">
-      <th>Name</th>
-      <th>Surname</th>
+      <th>First Name</th>
+      <th>Last Name</th>
       <th>Phone</th>
       <th>Email</th>
       <th>Company</th>
       <th></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngFor="let user of users">
     <tr class="users-table__data-box">
-      <td>Lucy</td>
-      <td>Manel</td>
-      <td>+1 454 56 77 654</td>
-      <td>Lucy.Manle&#64;gmail.com</td>
-      <td>Lucy's Flowers</td>
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.company.name }}</td>
       <td class="users-table__buttons">
         <button class="btn btn--posts">Posts</button>
         <button class="btn btn--todos">Todos</button>
