@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Post } from '../../interfaces/post';
 import { PostsService } from '../../services/posts.service';
 import { CommonModule } from '@angular/common';
@@ -13,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PostsTableComponent {
   posts: Post[] = [];
   userId!: number;
+  selectedPost: Post | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,5 +32,19 @@ export class PostsTableComponent {
         this.posts = data;
       });
     }
+  }
+
+  openPopup(post: Post): void {
+    this.selectedPost = post;
+  }
+
+  closePopup(): void {
+    this.selectedPost = null;
+  }
+
+  // Close popup box when 'Esc' key is clicked
+  @HostListener('document:keydown.escape', ['$event'])
+  handleEscape(event: KeyboardEvent) {
+    this.closePopup();
   }
 }

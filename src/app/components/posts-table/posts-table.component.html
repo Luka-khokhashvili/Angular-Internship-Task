@@ -16,8 +16,19 @@
       </td>
       <td class="posts-table__buttons">
         <button class="btn btn--user">User</button>
-        <button class="btn btn--details">Details</button>
+        <button class="btn btn--details" (click)="openPopup(post)">
+          Details
+        </button>
       </td>
     </tr>
   </tbody>
 </table>
+
+<!-- Modal Popup -->
+<div class="modal-backdrop" *ngIf="selectedPost">
+  <div class="modal">
+    <button class="modal__close" (click)="closePopup()">×</button>
+    <h2>{{ selectedPost.title }}</h2>
+    <p>{{ selectedPost.body }}</p>
+  </div>
+</div>
