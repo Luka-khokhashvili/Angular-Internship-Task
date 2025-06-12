@@ -7,13 +7,7 @@ import { PostsTableComponent } from './components/posts-table/posts-table.compon
 
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    HeaderComponent,
-    NavigationComponent,
-    UsersTableComponent,
-    PostsTableComponent,
-  ],
+  imports: [RouterOutlet, HeaderComponent, NavigationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
