@@ -1,4 +1,4 @@
-.users-table {
+.posts-table {
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;
@@ -43,22 +43,12 @@
   cursor: pointer;
   transition: all 0.3s ease;
 
-  &--posts {
+  &--user {
     background-color: rgb(21, 175, 68);
     color: rgb(255, 255, 255);
   }
 
-  &--todos {
-    border: 2px solid rgb(10, 30, 59);
-    color: rgb(10, 30, 59);
-  }
-
   &:hover {
     opacity: 0.85;
-  }
-
-  &--todos:hover {
-    background-color: rgb(10, 30, 59);
-    color: rgb(255, 255, 255);
   }
 }

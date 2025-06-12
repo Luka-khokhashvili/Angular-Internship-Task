@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { UsersTableComponent } from './components/users-table/users-table.component';
+import { PostsTableComponent } from './components/posts-table/posts-table.component';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { UsersTableComponent } from './components/users-table/users-table.compon
     HeaderComponent,
     NavigationComponent,
     UsersTableComponent,
+    PostsTableComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
