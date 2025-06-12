@@ -14,6 +14,7 @@ export class PostsTableComponent {
   posts: Post[] = [];
   userId!: number;
   selectedPost: Post | null = null;
+  isLoading: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,8 +25,17 @@ export class PostsTableComponent {
     this.userId = Number(this.route.snapshot.paramMap.get('userId'));
 
     if (this.userId) {
-      this.PostsService.getPostsByUserId(this.userId).subscribe((data) => {
-        this.posts = data;
+      this.isLoading = true;
+      this.PostsService.getPostsByUserId(this.userId).subscribe({
+        next: (data) => {
+          this.posts = data;
+        },
+        error: (error) => {
+          console.error('Error fetchin user data', error);
+        },
+        complete: () => {
+          this.isLoading = false;
+        },
       });
     } else {
       this.PostsService.getPosts().subscribe((data) => {

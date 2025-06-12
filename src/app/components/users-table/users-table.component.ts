@@ -15,13 +15,23 @@ export class UsersTableComponent {
   users: User[] = [];
   searchTerm: string = '';
   filteredUsers: User[] = [];
+  isLoading: boolean = false;
 
   constructor(private UsersService: UsersService) {}
 
   ngOnInit() {
-    this.UsersService.getUsers().subscribe((users) => {
-      this.users = users;
-      this.filteredUsers = users;
+    this.isLoading = true;
+    this.UsersService.getUsers().subscribe({
+      next: (users) => {
+        this.users = users;
+        this.filteredUsers = users;
+      },
+      error: (error) => {
+        console.error('Error fetchin user data', error);
+      },
+      complete: () => {
+        this.isLoading = false;
+      },
     });
   }
 

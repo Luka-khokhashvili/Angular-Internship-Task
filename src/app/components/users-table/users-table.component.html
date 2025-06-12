@@ -6,7 +6,10 @@
   (input)="filterUsers()"
   class="search-input"
 />
+
+
 <table class="users-table">
+  <div class="loader" *ngIf="isLoading"></div>
   <thead>
     <tr class="users-table__title-box">
       <th>Name</th>

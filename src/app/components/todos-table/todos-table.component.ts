@@ -13,6 +13,7 @@ import { TodosService } from '../../services/todos.service';
 export class TodosTableComponent {
   todos: Todo[] = [];
   userId!: number;
+  isLoading: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,8 +24,17 @@ export class TodosTableComponent {
     this.userId = Number(this.route.snapshot.paramMap.get('userId'));
 
     if (this.userId) {
-      this.TodosService.getTodosByUserId(this.userId).subscribe((data) => {
-        this.todos = data;
+      this.isLoading = true;
+      this.TodosService.getTodosByUserId(this.userId).subscribe({
+        next: (data) => {
+          this.todos = data;
+        },
+        error: (error) => {
+          console.error('Error fetchin user data', error);
+        },
+        complete: () => {
+          this.isLoading = false;
+        },
       });
     }
   }
