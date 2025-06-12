@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from '../../interfaces/user';
-import { DataService } from '../../services/data.service';
 import { CommonModule } from '@angular/common';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-users-table',
@@ -12,10 +12,10 @@ import { CommonModule } from '@angular/common';
 export class UsersTableComponent {
   users: User[] = [];
 
-  constructor(private dataService: DataService) {}
+  constructor(private UsersService: UsersService) {}
 
   ngOnInit() {
-    this.dataService.getUsers().subscribe((data) => {
+    this.UsersService.getUsers().subscribe((data) => {
       this.users = data;
     });
   }
