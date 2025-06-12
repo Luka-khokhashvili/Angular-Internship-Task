@@ -1,6 +1,5 @@
 .posts-table {
   width: 100%;
-  max-width: 100%;
   border-collapse: collapse;
   margin: 2rem 0;
   font-family: "Segoe UI", sans-serif;
@@ -14,6 +13,7 @@
     padding: 1rem;
     text-align: left;
     border-bottom: 1px solid rgb(238, 238, 238);
+    vertical-align: top;
   }
 
   th {
@@ -28,10 +28,19 @@
     transition: background-color 0.3s ease;
   }
 
+  &__body {
+    display: inline-block;
+    white-space: nowrap;
+    width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   &__buttons {
     display: flex;
-    gap: 0.5rem;
-    justify-content: start;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
   }
 }
 
@@ -48,7 +57,17 @@
     color: rgb(255, 255, 255);
   }
 
+  &--details {
+    border: 2px solid rgb(10, 30, 59);
+    color: rgb(10, 30, 59);
+  }
+
   &:hover {
     opacity: 0.85;
+  }
+
+  &--details:hover {
+    background-color: rgb(10, 30, 59);
+    color: rgb(255, 255, 255);
   }
 }

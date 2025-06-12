@@ -7,7 +7,7 @@ import { Todo } from '../interfaces/todo';
 @Injectable({
   providedIn: 'root',
 })
-export class UsersService {
+export class TodosService {
   baseUrl: string = 'https://jsonplaceholder.typicode.com';
 
   constructor(private httpClient: HttpClient) {}
@@ -16,7 +16,7 @@ export class UsersService {
     return this.httpClient.get<Todo[]>(`${this.baseUrl}/todos`);
   }
 
-  gettodosByUserId(userId: string): Observable<Todo> {
-    return this.httpClient.get<Todo>(`${this.baseUrl}/users/${userId}`);
+  getTodosByUserId(userId: string): Observable<Todo> {
+    return this.httpClient.get<Todo>(`${this.baseUrl}/todo/${userId}`);
   }
 }

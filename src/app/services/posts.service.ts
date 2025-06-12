@@ -7,16 +7,16 @@ import { Post } from '../interfaces/post';
 @Injectable({
   providedIn: 'root',
 })
-export class UsersService {
+export class PostsService {
   baseUrl: string = 'https://jsonplaceholder.typicode.com';
 
   constructor(private httpClient: HttpClient) {}
 
-  getUsers(): Observable<Post[]> {
+  getPosts(): Observable<Post[]> {
     return this.httpClient.get<Post[]>(`${this.baseUrl}/posts`);
   }
 
-  getUserById(id: string): Observable<Post> {
+  getPostsByUserId(id: string): Observable<Post> {
     return this.httpClient.get<Post>(`${this.baseUrl}/posts/${id}`);
   }
 }

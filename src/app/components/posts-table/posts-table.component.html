@@ -7,11 +7,16 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="posts-table__data-box">
-      <td>Lucy</td>
-      <td>My favourite Flower</td>
+    <tr class="posts-table__data-box" *ngFor="let post of posts">
+      <td>{{ post.title }}</td>
       <td>
+        <div class="posts-table__body">
+          {{ post.body }}
+        </div>
+      </td>
+      <td class="posts-table__buttons">
         <button class="btn btn--user">User</button>
+        <button class="btn btn--details">Details</button>
       </td>
     </tr>
   </tbody>
