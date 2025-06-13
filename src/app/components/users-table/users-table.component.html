@@ -27,12 +27,12 @@
       <td>{{ user.email }}</td>
       <td>{{ user.company.name }}</td>
       <td class="users-table__buttons">
-        <button [routerLink]="['/posts', user.id]" class="btn btn--posts">
+        <a [routerLink]="['/posts', user.id]" class="btn btn--posts">
           Posts
-        </button>
-        <button [routerLink]="['/todos', user.id]" class="btn btn--todos">
+        </a>
+        <a [routerLink]="['/todos', user.id]" class="btn btn--todos">
           Todos
-        </button>
+        </a>
       </td>
     </tr>
   </tbody>
