@@ -5,7 +5,7 @@ This project was created as an internship assignment and is intended as a demons
 
 ## Page Screen
 
-![Page Capture](Page_Capture-User_Dashboard.png)
+![Page Capture](public/Page_Capture-User_Dashboard.png)
 
 ## Tech Stack
 

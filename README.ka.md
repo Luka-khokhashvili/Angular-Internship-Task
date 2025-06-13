@@ -5,7 +5,7 @@
 
 ## გვერდის სქრინი
 
-![Page Capture](Page_Capture-User_Dashboard.png)
+![Page Capture](public/Page_Capture-User_Dashboard.png)
 
 ## გამოყენებული ტექნოლოგიები
 
