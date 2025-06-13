@@ -12,10 +12,12 @@ export class TodosService {
 
   constructor(private httpClient: HttpClient) {}
 
+  //? Fetch all todos
   getTodos(): Observable<Todo[]> {
     return this.httpClient.get<Todo[]>(`${this.baseUrl}/todos`);
   }
 
+  //? Fetch all todos by a specific user ID
   getTodosByUserId(userId: number): Observable<Todo[]> {
     return this.httpClient.get<Todo[]>(`${this.baseUrl}/users/${userId}/todos`);
   }

@@ -5,7 +5,9 @@
   font-family: "Segoe UI", sans-serif;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  -webkit-border-radius: 8px;
   overflow: hidden;
 
   th,
@@ -26,6 +28,7 @@
   tbody tr:hover {
     background-color: rgb(249, 249, 249);
     transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
   }
 
   &__body {
@@ -37,10 +40,13 @@
   }
 
   &__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 0.75rem;
     margin-top: 0.5rem;
     flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
   }
 }
 
@@ -48,9 +54,11 @@
   padding: 0.4rem 0.8rem;
   border: none;
   border-radius: 4px;
+  -webkit-border-radius: 4px;
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
 
   &--details {
     background-color: rgb(21, 175, 68);
@@ -66,9 +74,11 @@
   background-color: white;
   padding: 2rem;
   border-radius: 8px;
+  -webkit-border-radius: 8px;
   width: 90%;
   max-width: 600px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   font-family: "Segoe UI", sans-serif;
   position: relative;
 
@@ -79,9 +89,15 @@
     width: 100%;
     height: 100%;
     background-color: rgba(10, 30, 59, 0.5);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     z-index: 1000;
   }
 
@@ -114,11 +130,15 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   width: 30px;
   aspect-ratio: 1;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
   border: 5px solid #514b82;
   animation: l20-1 0.8s infinite linear alternate, l20-2 1.6s infinite linear;
+  -webkit-animation: l20-1 0.8s infinite linear alternate,
+    l20-2 1.6s infinite linear;
 }
 @keyframes l20-1 {
   0% {
@@ -205,8 +225,93 @@
     transform: scaleY(-1) rotate(-135deg);
   }
 }
+@-webkit-keyframes l20-1 {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+  }
+  12.5% {
+    clip-path: polygon(
+      50% 50%,
+      0 0,
+      50% 0%,
+      100% 0%,
+      100% 0%,
+      100% 0%,
+      100% 0%
+    );
+  }
+  25% {
+    clip-path: polygon(
+      50% 50%,
+      0 0,
+      50% 0%,
+      100% 0%,
+      100% 100%,
+      100% 100%,
+      100% 100%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      50% 50%,
+      0 0,
+      50% 0%,
+      100% 0%,
+      100% 100%,
+      50% 100%,
+      0% 100%
+    );
+  }
+  62.5% {
+    clip-path: polygon(
+      50% 50%,
+      100% 0,
+      100% 0%,
+      100% 0%,
+      100% 100%,
+      50% 100%,
+      0% 100%
+    );
+  }
+  75% {
+    clip-path: polygon(
+      50% 50%,
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      50% 100%,
+      0% 100%
+    );
+  }
+  100% {
+    clip-path: polygon(
+      50% 50%,
+      50% 100%,
+      50% 100%,
+      50% 100%,
+      50% 100%,
+      50% 100%,
+      0% 100%
+    );
+  }
+}
+@-webkit-keyframes l20-2 {
+  0% {
+    -webkit-transform: scaleY(1) rotate(0deg);
+  }
+  49.99% {
+    -webkit-transform: scaleY(1) rotate(135deg);
+  }
+  50% {
+    -webkit-transform: scaleY(-1) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: scaleY(-1) rotate(-135deg);
+  }
+}
 
-// Repsonsive styles for smaller screens
+// Responsive styles for smaller screens
 @media only screen and (max-width: 760px) {
   table,
   thead,
@@ -215,6 +320,7 @@
   td,
   tr {
     display: block;
+    width: 100%;
   }
 
   /* Hide table headers (but not display: none;, for accessibility) */
@@ -232,14 +338,28 @@
     border: none;
     border-bottom: 1px solid #eee;
     position: relative;
+    padding-left: 48%;
+    min-height: 2.5em;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
   }
 
   td:before {
+    content: attr(data-label);
     position: absolute;
-    top: 0;
-    left: 10px;
-    padding-right: 10px;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    font-weight: bold;
+    color: #0a1e3b;
     white-space: nowrap;
+    font-size: 0.95em;
+    width: 45%;
+    text-align: left;
+    pointer-events: none;
   }
 
   .posts-table {

@@ -6,7 +6,9 @@
   font-family: "Segoe UI", sans-serif;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  -webkit-border-radius: 8px;
   overflow: hidden;
 
   th,
@@ -26,11 +28,13 @@
   tbody tr:hover {
     background-color: rgb(249, 249, 249);
     transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
   }
 
   &__data-box {
     &.completed {
       border-inline: 5px solid rgb(21, 175, 68);
+      /* border-inline is not supported in IE, but safe for modern browsers */
     }
   }
 
@@ -44,9 +48,14 @@
   }
 
   &__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 0.5rem;
-    justify-content: start;
+    -webkit-gap: 0.5rem;
+    justify-content: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
   }
 }
 
@@ -55,11 +64,15 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   width: 30px;
   aspect-ratio: 1;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
   border: 5px solid #514b82;
   animation: l20-1 0.8s infinite linear alternate, l20-2 1.6s infinite linear;
+  -webkit-animation: l20-1 0.8s infinite linear alternate,
+    l20-2 1.6s infinite linear;
 }
 @keyframes l20-1 {
   0% {
@@ -147,7 +160,7 @@
   }
 }
 
-// Repsonsive styles for smaller screens
+/* Responsive styles for smaller screens */
 @media only screen and (max-width: 760px) {
   table,
   thead,
@@ -156,6 +169,7 @@
   td,
   tr {
     display: block;
+    width: 100%;
   }
 
   /* Hide table headers (but not display: none;, for accessibility) */
@@ -173,13 +187,28 @@
     border: none;
     border-bottom: 1px solid #eee;
     position: relative;
+    padding-left: 48%;
+    min-height: 2.5em;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
   }
 
   td:before {
+    content: attr(data-label);
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 10px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     padding-right: 10px;
     white-space: nowrap;
+    font-weight: bold;
+    color: #0a1e3b;
+    font-size: 0.95em;
+    width: 45%;
+    text-align: left;
+    pointer-events: none;
   }
 }

@@ -11,6 +11,7 @@ export class UsersService {
 
   constructor(private httpClient: HttpClient) {}
 
+  //? Fetch all users and transform the name
   getUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>(`${this.baseUrl}/users`).pipe(
       map((users) =>
@@ -27,6 +28,7 @@ export class UsersService {
     );
   }
 
+  //? Fetch a user by ID
   getUserById(id: number): Observable<User> {
     return this.httpClient.get<User>(`${this.baseUrl}/users/${id}`);
   }

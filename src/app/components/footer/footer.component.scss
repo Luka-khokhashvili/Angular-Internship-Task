@@ -1,9 +1,17 @@
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   align-items: center;
-  padding-block: 2rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   border-radius: 20px 20px 0 0;
+  -webkit-border-radius: 20px 20px 0 0;
   background-color: rgb(10, 30, 59);
 
   p {
@@ -12,10 +20,11 @@ footer {
   }
 }
 
-// Repsonsive styles for smaller screens
+// Responsive styles for smaller screens
 @media only screen and (max-width: 760px) {
   footer {
-    padding-block: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
     p {
       font-size: 0.9rem;
