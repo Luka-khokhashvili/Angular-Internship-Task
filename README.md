@@ -3,6 +3,10 @@
 A simple Angular dashboard that displays a list of users, their posts, and their todo lists.
 This project was created as an internship assignment and is intended as a demonstration of Angular skills.
 
+## Page Screen
+
+![Page Capture](Page_Capture-User_Dashboard.png)
+
 ## Tech Stack
 
 - [Angular](https://angular.dev/) 19
