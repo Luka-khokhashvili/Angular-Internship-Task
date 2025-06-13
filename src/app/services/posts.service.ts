@@ -12,12 +12,12 @@ export class PostsService {
 
   constructor(private httpClient: HttpClient) {}
 
-  // Fetch all posts
+  //? Fetch all posts
   getPosts(): Observable<Post[]> {
     return this.httpClient.get<Post[]>(`${this.baseUrl}/posts`);
   }
 
-  // Fetch posts by a specific user ID
+  //? Fetch posts by a specific user ID
   getPostsByUserId(userId: number): Observable<Post[]> {
     return this.httpClient.get<Post[]>(`${this.baseUrl}/users/${userId}/posts`);
   }
