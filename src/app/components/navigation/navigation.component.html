@@ -10,6 +10,10 @@
     <span></span>
   </button>
 
-  <a routerLink="/users" class="navigation__link">Users</a>
-  <a routerLink="/posts" class="navigation__link">Posts</a>
+  <a routerLink="/users" class="navigation__link" (click)="toggleNavigation()"
+    >Users</a
+  >
+  <a routerLink="/posts" class="navigation__link" (click)="toggleNavigation()"
+    >Posts</a
+  >
 </nav>

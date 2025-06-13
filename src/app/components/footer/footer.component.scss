@@ -7,6 +7,18 @@ footer {
   background-color: rgb(10, 30, 59);
 
   p {
+    text-align: center;
     color: rgb(255, 255, 255);
+  }
+}
+
+// Repsonsive styles for smaller screens
+@media only screen and (max-width: 760px) {
+  footer {
+    padding-block: 1rem;
+
+    p {
+      font-size: 0.9rem;
+    }
   }
 }

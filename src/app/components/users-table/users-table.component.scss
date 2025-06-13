@@ -9,6 +9,8 @@
   border-radius: 8px;
   overflow: hidden;
 
+  justify-self: center;
+
   th,
   td {
     padding: 1rem;
@@ -165,5 +167,52 @@
   }
   100% {
     transform: scaleY(-1) rotate(-135deg);
+  }
+}
+
+// Repsonsive styles for smaller screens
+@media only screen and (max-width: 769px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+
+  td:before {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  .users-table {
+    &__buttons {
+      justify-content: flex-end;
+    }
+  }
+
+  .search-input {
+    width: 100%;
   }
 }
