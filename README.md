@@ -1,59 +1,72 @@
-# AngularInternTask
+# Users Dashboard
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
+A simple Angular dashboard that displays a list of users, their posts, and their todo lists.
+This project was created as an internship assignment and is intended as a demonstration of Angular skills.
 
-## Development server
+## Tech Stack
 
-To start a local development server, run:
+- [Angular](https://angular.dev/) 19
+- TypeScript
+- SCSS
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/) (for mock data)
 
-```bash
-ng serve
-```
+## Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- View a searchable list of users
+- View posts for each user
+- View todos for each user
+- Responsive and modern UI
 
-## Code scaffolding
+## Getting Started
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Prerequisites
 
-```bash
-ng generate component component-name
-```
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [Angular CLI](https://angular.dev/tools/cli) (`npm install -g @angular/cli`)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Local Development
 
-```bash
-ng generate --help
-```
+1. **Install dependencies:**
 
-## Building
+   ```sh
+   npm install
+   ```
 
-To build the project run:
+2. **Start the development server:**
 
-```bash
-ng build
-```
+   ```sh
+   npm start
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+   or
 
-## Running unit tests
+   ```sh
+   ng serve
+   ```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+3. **Open your browser:**  
+   Visit [http://localhost:4200](http://localhost:4200)
 
-```bash
-ng test
-```
+### How to Use
 
-## Running end-to-end tests
+- **Users List:**  
+  The homepage displays a searchable table of users. Use the search bar to filter users by name or email.
 
-For end-to-end (e2e) testing, run:
+- **View Posts:**  
+  Click the "Posts" button next to a user to see all posts by that user. You can also access all posts from the navigation menu.
 
-```bash
-ng e2e
-```
+- **View Todos:**  
+  Click the "Todos" button next to a user to see their todo list.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- **Navigation:**  
+  Use the sidebar navigation to switch between Users and Posts sections at any time.
 
-## Additional Resources
+## Live Demo
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+> _[User Dashboard](https://angular-internship-task.vercel.app/posts/1)_
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+&copy; 2025 Luka Khokhashvili. All rights reserved.
